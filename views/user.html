@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body>
+    <a href="/user/add.html">新增</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>ADMINNAME</th>
+            <th>PASSWORD</th>
+            <th>SALT</th>
+            <th>AVATAR</th>
+            <th>ROLE</th>
+            <th>CTIME</th>
+            <th>UTIME</th>
+            <th>ACTION</th>
+        </tr>
+        {{each userlist}}
+        <tr>
+            <td>{{$value.id}}</td>
+            <td>{{$value.name}}</td>
+            <td>{{$value.password}}</td>
+            <td>{{$value.salt}}</td>
+            <td>{{$value.avatar}}</td>
+            <td>{{$value.role}}</td>
+            <td>{{$value.create_time}}</td>
+            <td>{{$value.update_time}}</td>
+            <td><a href="/user/edit?eid={{$value.id}}">edit</a>/ <a href="/user/del?did={{$value.id}}" onclick="return confirm('确认删除?')">删除</a></td>
+        </tr>
+    {{/each}} 
+    </table>
+    
+</body>
+</html>

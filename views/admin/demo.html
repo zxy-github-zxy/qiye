@@ -1,0 +1,76 @@
+{{extend './layout.html'}}
+
+{{block 'title'}}
+测试无限分类
+{{/block}}
+
+{{block 'content'}}
+<div class="container">
+    <a href="/admin/add_news.html" class="btn btn-success">添加</a>
+    <table class="table table-striped  table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>标题</th>
+                <th>内容</th>
+                <th>描述</th>
+                <th>关键字</th>
+                <th>作者</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {{each cat_list}}
+            <tr>
+                <td>{{$value.id}}</td>
+                <!-- <td>{{'-->|'.repeat($value.level)}}{{$value.category}}</td> -->
+                <!-- <td>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" class="" value="{{$value.status}}"
+                                {{$value.status == 1 ? 'checked' : ''}}>
+                        </label>
+                    </div>
+
+                </td> -->
+                <td> <a href="#">{{$value.title}}</a></td>
+                <td>{{$value.content}}</td>
+                <td>{{$value.description}}</td>
+                <td>{{$value.keywords}}</td>
+                <td>{{$value.author}}</td>
+               
+                <td>
+                    <a href="#" class="btn btn-success">编辑</a>
+                    <!-- <a href="/admin/del_cat/{{$value.id}}" class="btn btn-danger">删除</a> -->
+                    <a href="/admin/del_cat?did={{$value.id}}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+
+    <!-- {{each cat_list}} -->
+    <!-- {{$value.id}}----{{$value.category}} -->
+    <!-- {{/each}} -->
+</div>
+
+{{/block}}
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {{each list}}
+            <a href="/add_news/{{$value.id}}">{{$value.title}}---{{$value.create_time}}</a>
+
+
+        {{/each}}
+    </ul>
+</body>
+</html> -->

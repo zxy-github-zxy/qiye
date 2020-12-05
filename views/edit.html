@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/user/edit" method="POST">
+        <div>
+            username: <input type="text" name="name" value="{{user.name}}">
+        </div>
+        <div>
+            password: <input type="text" name="password" value="{{user.password}}">
+        </div>
+        <div>
+            salt: <input type="text" name="salt" value="{{user.salt}}">
+        </div>
+        <div>
+            <input type="hidden" value="{{user.id}}" name="eid">
+             <input type="submit">
+        </div>
+    </form>
+</body>
+</html>

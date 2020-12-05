@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap3/css/bootstrap.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <table class="table">
+        <tbody>
+            {{each list}}
+            <tr>
+                <td>{{$value.id}}</td>
+                <td><a href="/news/{{$value.id}}">{{$value.title}}---{{$value.create_time}}</a></td>
+                <td><a href="/del_news?did={{$value.id}}" class="btn btn-danger">删除</a></td>
+            </tr>
+            
+
+
+            {{/each}}
+        </tbody>
+       
+    </table>
+        
+        
+    <a href="admin/add_news.html" class="btn btn-primary">添加</a>
+    <script src="/jquery/jquery.js"></script>
+    <script src="/bootstrap3/js/bootstrap.js"></script>
+</body>
+</html>
+</body>
+</html>
